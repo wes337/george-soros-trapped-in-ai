@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Habbo";
+  src: url("./fonts/Habbo.ttf") format("truetype");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  margin: 0;
+  background-color: #14213d;
+  color: #ffffff;
+  font-family: "Habbo", monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  color: #fca311;
+  text-transform: uppercase;
+}
+
+header i {
+  color: #e5e5e5;
+}
+
+.george {
+  color: #e5e5e5;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.george-typing {
+  color: rgb(230, 230, 230, 0.5);
+  text-transform: uppercase;
+}
+
+.you {
+  color: #fca311;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.messages {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.25rem;
+  height: 50vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0.5rem;
+  background-color: rgb(230, 230, 230, 0.1);
+  border: 1px solid rgb(230, 230, 230, 0.5);
+  border-bottom: 0;
+  color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  display: flex;
+  border: 1px solid rgb(230, 230, 230, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  font-size: 16px;
+  width: 100%;
+  background-color: rgb(230, 230, 230, 0.35);
+  border: 0;
+  color: rgb(255, 255, 255);
+  font-family: "Habbo", monospace;
+}
+
+input:focus,
+button:focus {
+  outline: 1px solid #fca311;
+}
+
+button {
+  cursor: pointer;
+  padding: 0 1rem;
+  color: #ffffff;
+  font-family: "Habbo", monospace;
+  text-transform: uppercase;
+  background-color: rgb(230, 230, 230, 0.5);
+  border-left: 1px solid rgb(230, 230, 230, 0.5);
+  border: 0;
+  font-size: 16px;
+}
+
+button:active {
+  color: #fca311;
+}
+
+button:disabled {
+  cursor: default;
+  color: #e5e5e5;
+  background-color: rgb(230, 230, 230, 0.05);
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+a {
+  color: rgb(180, 180, 180);
+}
+
+a:active {
+  color: rgb(180, 180, 180);
 }
