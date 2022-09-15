@@ -12,10 +12,6 @@ function App() {
     return Math.random() * (max - min + 1) + min;
   };
 
-  const randomBoolean = () => {
-    return Math.random() < 0.5;
-  };
-
   useEffect(() => {
     const messagesElement = document.querySelector(".messages");
     messagesElement.scrollTop = messagesElement.scrollHeight;
@@ -38,16 +34,13 @@ function App() {
         response.data.forEach((response, i) => {
           if (response.length > 1) {
             setGeorgeIsTyping(true);
-            const sendIt = i === 0 || randomBoolean();
-            if (sendIt) {
-              setTimeout(() => {
-                setMessages((messages) => [
-                  ...messages,
-                  { name: "George Soros", content: response },
-                ]);
-                setGeorgeIsTyping(false);
-              }, randomNumberBetween(1, 8) * 1000);
-            }
+            setTimeout(() => {
+              setMessages((messages) => [
+                ...messages,
+                { name: "George Soros", content: response },
+              ]);
+              setGeorgeIsTyping(false);
+            }, randomNumberBetween(1, 8) * 1000 * i);
           }
         });
         setLoading(false);
