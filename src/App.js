@@ -32,6 +32,9 @@ function App() {
         question,
       })
       .then((response) => {
+        if (!response || !response.data) {
+          return;
+        }
         response.data.forEach((response, i) => {
           if (response.length > 1) {
             setGeorgeIsTyping(true);
