@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/george-soros-trapped-in-ai/static/css/main.4f86f1cd.css",
-    "main.js": "/george-soros-trapped-in-ai/static/js/main.decdd810.js",
+    "main.js": "/george-soros-trapped-in-ai/static/js/main.43487e51.js",
     "static/media/Habbo.ttf": "/george-soros-trapped-in-ai/static/media/Habbo.b0d1b631a0c28740bdde.ttf",
     "index.html": "/george-soros-trapped-in-ai/index.html",
     "main.4f86f1cd.css.map": "/george-soros-trapped-in-ai/static/css/main.4f86f1cd.css.map",
-    "main.decdd810.js.map": "/george-soros-trapped-in-ai/static/js/main.decdd810.js.map"
+    "main.43487e51.js.map": "/george-soros-trapped-in-ai/static/js/main.43487e51.js.map"
   },
   "entrypoints": [
     "static/css/main.4f86f1cd.css",
-    "static/js/main.decdd810.js"
+    "static/js/main.43487e51.js"
   ]
 }
