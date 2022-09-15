@@ -13,6 +13,11 @@ function App() {
   };
 
   useEffect(() => {
+    const inputElement = document.querySelector("input");
+    inputElement.focus();
+  }, []);
+
+  useEffect(() => {
     const messagesElement = document.querySelector(".messages");
     messagesElement.scrollTop = messagesElement.scrollHeight;
   }, [messages, georgeIsTyping]);
