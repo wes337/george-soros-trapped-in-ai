@@ -17,6 +17,10 @@ body {
   margin: 0 1rem;
 }
 
+main {
+  max-width: 600px;
+}
+
 h1 {
   color: #fca311;
   text-transform: uppercase;

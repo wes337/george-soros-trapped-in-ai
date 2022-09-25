@@ -7,6 +7,7 @@ function App() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [georgeIsTyping, setGeorgeIsTyping] = useState(false);
+  const [firstQuestionAsked, setFirstQuestionAsked] = useState(false);
 
   const randomNumberBetween = (min, max) => {
     return Math.random() * (max - min + 1) + min;
@@ -22,7 +23,45 @@ function App() {
     messagesElement.scrollTop = messagesElement.scrollHeight;
   }, [messages, georgeIsTyping]);
 
+  const continueConversation = (question) => {
+    setLoading(true);
+    const conversation = messages.map(
+      (message) => `${message.name}: ${message.content}`
+    );
+    conversation.push(`You: ${question}`);
+
+    axios
+      .post(
+        "https://identity-crisis-2000.herokuapp.com/converse-with-george-soros",
+        {
+          conversation: conversation.join("\n"),
+        }
+      )
+      .then((response) => {
+        if (!response || !response.data) {
+          return;
+        }
+
+        setGeorgeIsTyping(true);
+        setTimeout(() => {
+          setMessages((messages) => [
+            ...messages,
+            { name: "George Soros", content: response.data.split("You:")[0] },
+          ]);
+          setGeorgeIsTyping(false);
+        }, randomNumberBetween(1, 8) * 1000);
+
+        setLoading(false);
+      });
+
+    setLoading(false);
+  };
+
   const askGeorgeSoros = (question) => {
+    if (firstQuestionAsked) {
+      continueConversation(question);
+      return;
+    }
     setLoading(true);
     setTimeout(() => {
       setGeorgeIsTyping(true);
@@ -49,6 +88,7 @@ function App() {
           }
         });
         setLoading(false);
+        setFirstQuestionAsked(true);
       });
   };
 
