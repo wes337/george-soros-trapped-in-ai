@@ -32,7 +32,7 @@ function App() {
 
     axios
       .post(
-        "https://identity-crisis-2000.herokuapp.com/converse-with-george-soros",
+        "https://identity-crisis-server.fly.dev/converse-with-george-soros",
         {
           conversation: conversation.join("\n"),
         }
@@ -68,7 +68,7 @@ function App() {
     }, randomNumberBetween(1, 2) * 1000);
 
     axios
-      .post("https://identity-crisis-2000.herokuapp.com/ask-george-soros", {
+      .post("https://identity-crisis-server.fly.dev/ask-george-soros", {
         question,
       })
       .then((response) => {
